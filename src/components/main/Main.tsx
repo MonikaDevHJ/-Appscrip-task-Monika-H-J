@@ -2,10 +2,22 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "./Mainstyle.css";
+import Filters from "../filters/filters";
 
+interface Product {
+    id: number;
+    name: string;
+    image: string;
+    description: string;
+    outOfStock: boolean;
+}
 const Main = () => {
     const [showFilters, setShowFilters] = useState(false);
     const [sortBy, setSortBy] = useState("recommended");
+
+
+    const [filterDropdowns, setFilterDropdowns] = useState<{ [key: string]: boolean }>({});
+
 
     const products = [
         {
@@ -130,15 +142,21 @@ const Main = () => {
         pattern: ["All", "Solid", "Printed", "Striped"]
     };
 
-    function handleFilterToggle(): void {
-        throw new Error("Function not implemented.");
-    }
+    const toggleFilterDropdown = (category: string) => {
+        setFilterDropdowns((prev) => ({
+            ...prev,
+            [category]: !prev[category],
+        }));
+    };
+
+
+    const handleFilterToggle = () => {
+        setShowFilters(!showFilters);
+    };
 
     return (
         <div>
             <main className="main">
-
-
                 <div className="border">
                     <h1>DISCOVER OUR PRODUCTS</h1>
                     <p className="subtitle">
@@ -152,7 +170,7 @@ const Main = () => {
                     <div className="header-left">
                         <span>{products.length} ITEMS</span>
                         <span className="hide-filter" onClick={handleFilterToggle}>
-                            &lt; Hide Filter
+                            {showFilters ? "< Hide Filter" : "> Show Filter"}
                         </span>
                     </div>
 
@@ -168,37 +186,10 @@ const Main = () => {
                     </select>
                 </div>
 
-
-
                 <div className="content">
-                    <button
-                        className="filter-toggle"
-                        onClick={() => setShowFilters(!showFilters)}
-                    >
-                        {showFilters ? "HIDE FILTER" : "SHOW FILTER"}
-                    </button>
+                    <Filters showFilters={showFilters} setShowFilters={setShowFilters}/>
 
-                    <aside className={`filters ${showFilters ? "show" : ""}`}>
-                        {Object.entries(filters).map(([category, options]) => (
-                            <div key={category} className="filter-group">
-                                <h3>{category.toUpperCase()}</h3>
-                                {options.map((option) => (
-                                    <label key={option} className="filter-option">
-                                        <input type="checkbox" name={category} value={option} />
-                                        {option}
-                                    </label>
-                                ))}
-                            </div>
-                        ))}
-                    </aside>
-
-                    
-                    <div className="products-section">
-
-
-
-
-                        {/* Images Started */}
+                    <div className={`products-section ${showFilters ? "with-filters" : "full-width"}`}>
                         <div className="products-grid">
                             {products.map((product) => (
                                 <div key={product.id} className="product-card">
@@ -229,11 +220,7 @@ const Main = () => {
                                 </div>
                             ))}
                         </div>
-
-                        {/* Images Ended */}
                     </div>
-               
-               
                 </div>
             </main>
         </div>

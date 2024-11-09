@@ -47,15 +47,28 @@
   .filter-group h3 {
     margin-bottom: 10px;
     font-size: 14px;
-  }
-  
-  .filter-option {
+    cursor: pointer;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.dropdown-icon {
+  margin-left: 5px;
+  font-size: 0.8em;
+}
+
+
+.filter-option {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 8px;
     cursor: pointer;
-  }
+}
   
   /* Products section styles */
   .products-section {

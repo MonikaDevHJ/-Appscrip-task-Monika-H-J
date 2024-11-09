@@ -1,0 +1,177 @@
+/* Footer styles */
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+.newsletter-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+@media (min-width: 768px) {
+  .newsletter-wrapper {
+    gap: 400px;
+  }
+}
+
+.newsletter {
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+}
+
+.subscribe {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.subscribe input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #fff;
+  background: #fff;
+  color: #fff;
+  max-width: 800px;
+}
+
+.subscribe button {
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.footer-sections {
+  display: flex;
+  flex-wrap: wrap; /* Ensure items in the footer can wrap if needed */
+  gap: 30px;
+  justify-content: space-between; /* Align the sections evenly */
+  flex: 1;
+  min-width: 250px;
+  max-width: 900px; /* Same max-width as the newsletter to ensure consistency */
+}
+
+.footer-section h4 {
+  margin: 0;
+}
+
+.footer-section a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.currency-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.currency-icon {
+  width: 20px;
+  height: auto;
+}
+
+/* Make the image responsive */
+@media (max-width: 600px) {
+  .currency-icon {
+    width: 15px;
+  }
+}
+.transaction-info {
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+  color: aliceblue;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid white;
+  margin-top: 5px;
+  width: 80%; /* Adjust to control left/right spacing */
+  margin: 0 auto;
+}
+
+/* Footer content grid layout */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 0 auto;
+  max-width: 900px;
+  margin-top: 50px;
+
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack footer sections on smaller screens */
+    gap: 20px; /* Add space between footer sections */
+  }
+
+  .newsletter-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-sections {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+
+
+  .subscribe {
+    flex-direction: column;
+  }
+
+  .subscribe input {
+    margin-bottom: 10px; /* Space between input and button */
+  }
+
+  .footer-section a {
+    margin-bottom: 15px; /* Add more space between links for readability */
+  }
+
+  
+}
+
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 10px; /* Adjust padding for smaller screens */
+  }
+
+  .footer-bottom {
+    font-size: 12px; /* Smaller font size for footer copyright on mobile */
+  }
+}
+
+
+.currency-icon:last-child {
+    margin-left: 20px;  /* Adds space to the left of the second image */
+}
