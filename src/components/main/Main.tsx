@@ -157,6 +157,7 @@ const Main = () => {
     return (
         <div>
             <main className="main">
+              
                 <div className="border">
                     <h1>DISCOVER OUR PRODUCTS</h1>
                     <p className="subtitle">
@@ -222,6 +223,7 @@ const Main = () => {
                         </div>
                     </div>
                 </div>
+            
             </main>
         </div>
     );
