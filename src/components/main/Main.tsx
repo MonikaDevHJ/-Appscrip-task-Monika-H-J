@@ -117,19 +117,7 @@ const Main = () => {
 
         // Add more products as needed
     ];
-
-    const filters = {
-        size: ["All", "S", "M", "L", "XL"],
-        customizable: ["Yes", "No"],
-        idealFor: ["All", "Men", "Women", "Kids"],
-        occasion: ["All", "Casual", "Formal", "Sports"],
-        work: ["All", "Office", "Outdoor", "Home"],
-        fabric: ["All", "Cotton", "Polyester", "Wool"],
-        segment: ["All", "Budget", "Premium", "Luxury"],
-        suitableFor: ["All", "Daily Use", "Special Occasions"],
-        rawMaterials: ["All", "Natural", "Synthetic"],
-        pattern: ["All", "Solid", "Printed", "Striped"]
-    };
+;
 
     const handleFilterToggle = () => {
         setShowFilters(!showFilters);
