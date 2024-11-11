@@ -3,19 +3,9 @@ import Image from "next/image";
 import "./Mainstyle.css";
 import Filters from "../filters/filters";
 
-interface Product {
-    id: number;
-    name: string;
-    image: string;
-    description: string;
-    outOfStock: boolean;
-}
 const Main = () => {
     const [showFilters, setShowFilters] = useState(false);
     const [sortBy, setSortBy] = useState("recommended");
-
-
-    const [filterDropdowns, setFilterDropdowns] = useState<{ [key: string]: boolean }>({});
 
 
     const products = [
@@ -141,14 +131,6 @@ const Main = () => {
         pattern: ["All", "Solid", "Printed", "Striped"]
     };
 
-    const toggleFilterDropdown = (category: string) => {
-        setFilterDropdowns((prev) => ({
-            ...prev,
-            [category]: !prev[category],
-        }));
-    };
-
-
     const handleFilterToggle = () => {
         setShowFilters(!showFilters);
     };
@@ -187,7 +169,7 @@ const Main = () => {
                 </div>
 
                 <div className="content">
-                    <Filters showFilters={showFilters} setShowFilters={setShowFilters}/>
+                    <Filters showFilters={showFilters}/>
 
                     <div className={`products-section ${showFilters ? "with-filters" : "full-width"}`}>
                         <div className="products-grid">

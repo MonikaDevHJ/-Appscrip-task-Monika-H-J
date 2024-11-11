@@ -4,10 +4,9 @@ import { useState } from "react";
 
 interface FilterProps {
     showFilters: boolean; // Corrected type to lowercase boolean
-    setShowFilters: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Filters({ showFilters, setShowFilters }: FilterProps) {
+export default function Filters({ showFilters }: FilterProps) {
     const [filterDropdowns, setFilterDropdowns] = useState<{ [key: string]: boolean }>({});
 
     const filters = {
